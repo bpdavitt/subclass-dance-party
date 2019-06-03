@@ -36,5 +36,14 @@ $(document).ready(function() {
       element.lineUp();
     }
   });
+
+  // $(document.body).on('.dancer','mouseover', function(event) {
+  //   console.log(this);
+  //   var newProps = {
+  //     'border-size': '20px',
+  //     'border-radius': '20px'
+  //   };
+  //   $(this).css(newProps);
+  // });
 });
 

@@ -8,6 +8,24 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.step(timeBetweenSteps);
   this.setPosition(top, left);
 
+  $('.dancer').on('mouseover', function(event) {
+    console.log(this);
+    var newProps = {
+      'border-width': '20px',
+      'border-radius': '20px'
+    };
+    $(this).css(newProps);
+  });
+
+  $('.dancer').on('mouseout', function(event) {
+    console.log(this);
+    var newProps = {
+      'border-width': '10px',
+      'border-radius': '10px'
+    };
+    $(this).css(newProps);
+  });  
+
 };
 
 
