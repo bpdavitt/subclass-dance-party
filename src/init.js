@@ -37,13 +37,7 @@ $(document).ready(function() {
     }
   });
 
-  // $(document.body).on('.dancer','mouseover', function(event) {
-  //   console.log(this);
-  //   var newProps = {
-  //     'border-size': '20px',
-  //     'border-radius': '20px'
-  //   };
-  //   $(this).css(newProps);
-  // });
+  $('.music').toggle();
+
 });
 

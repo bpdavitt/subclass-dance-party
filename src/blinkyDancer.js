@@ -7,5 +7,5 @@ BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 BlinkyDancer.prototype.step = function(timeBetweenSteps) {
   Dancer.prototype.step.call(this, timeBetweenSteps);
-  this.$node.toggle();
+  this.$node.fadeToggle('fast', 'linear', this.setPosition(this.$node.css('top'), this.$node.css('left')));
 };

@@ -10,3 +10,8 @@ Moonwalker.prototype.step = function(timeBetweenSteps) {
   Dancer.prototype.step.call(this, timeBetweenSteps);
   
 };
+
+Moonwalker.prototype.lineUp = function() {
+  this.setPosition(this.$node.css('top'), this.$node.css('left'));
+  this.$node.addClass('lineup');
+};

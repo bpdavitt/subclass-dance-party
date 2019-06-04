@@ -43,6 +43,6 @@ Dancer.prototype.step = function(timeBetweenSteps) {
   setTimeout(this.step.bind(this), this.timeBetweenSteps); //dont forget about whether this works!!!
 };
 
-Dancer.prototype.lineUp = function() {
-  this.$node.css('left', 10);
+Dancer.prototype.lineUp = function() {   
+  this.$node.addClass('lineup');
 };
