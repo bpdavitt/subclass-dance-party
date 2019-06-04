@@ -9,16 +9,22 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.setPosition(top, left);
 
   $('.dancer').on('mouseover', function(event) {
-    console.log(this);
-    var newProps = {
-      'border-width': '20px',
-      'border-radius': '20px'
-    };
+    if ($(this).css('border-width') === 0) {
+      console.log(this);
+      var newProps = {
+        'height': (formatPixels($(this.partner.$node).css('height')) * 2) + 'px',
+        'width': (formatPixels($(this.partner.$node).css('width')) * 2) + 'px'      
+      };
+    } else {
+      var newProps = {
+        'border-width': '20px',
+        'border-radius': '20px'
+      };
+    }
     $(this).css(newProps);
   });
 
   $('.dancer').on('mouseout', function(event) {
-    console.log(this);
     var newProps = {
       'border-width': '10px',
       'border-radius': '10px'

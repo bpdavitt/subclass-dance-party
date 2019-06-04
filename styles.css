@@ -34,7 +34,8 @@ body, a:link, a:visited, a:active{
   background-size: contain;
   height: 100px;
   width: 100px;
-  border: 0 none;
+  border-width: 0;
+  border-style: none;
   border-radius: 100px;
   animation: shake .6s;
   animation-iteration-count: infinite;

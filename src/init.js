@@ -37,7 +37,9 @@ $(document).ready(function() {
     }
   });
 
-  $('.music').toggle();
+  $('.startMusic').on('click', function(event) {
+    $('audio')[0].play();  
+  });
 
 });
 
