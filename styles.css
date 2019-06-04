@@ -25,3 +25,9 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.cowboy{
+  background-image: url('images/cowboy.jpeg');
+  height: 100px;
+  width: 100px;
+  border: 0 none;
+}

@@ -1,14 +1,12 @@
 var SquareDancer = function(top, left, timeBetweenSteps) {
-  
   this.partner = this.choosePartner(window.dancers);
-  
-
   this.partnerTop = formatPixels($(this.partner.$node).css('top'));
   this.partnerLeft = formatPixels($(this.partner.$node).css('left'));
   this.top = this.partnerTop - 30;
-  this.left = this.partnerLeft;
+  this.left = this.partnerLeft; 
 
   Dancer.call(this, this.top, this.left, timeBetweenSteps);
+  this.$node.addClass("cowboy");
   
 };
 
