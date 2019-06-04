@@ -11,11 +11,23 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: pink;
 }
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+}
+.startMusic{
+  padding:5px 12px;
+  float:left;
+  background-image: linear-gradient(to right, purple, #555);
+}
+.startMusic:hover{
+  font-weight: bold;
+}
+.lineUpButton{
+  padding:5px 12px;
+  float:left;
 }
 .topbar{
   height:32px;

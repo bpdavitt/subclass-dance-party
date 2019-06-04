@@ -9,7 +9,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.setPosition(top, left);
 
   $('.dancer').on('mouseover', function(event) {
-    if ($(this).css('border-width') !== '10px') {
+    if ($(this).css('border-width') === '0px') {
       var newProps = {
         'height': (formatPixels($(this).css('height')) * 2) + 'px',
         'width': (formatPixels($(this).css('width')) * 2) + 'px'      
@@ -24,7 +24,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   });
 
   $('.dancer').on('mouseout', function(event) {
-    if ($(this).css('border-width') !== '20px') {
+    if ($(this).css('border-width') === '0px') {
       var newProps = {
         'height': (formatPixels($(this).css('height')) * .5) + 'px',
         'width': (formatPixels($(this).css('width')) * .5) + 'px'      
