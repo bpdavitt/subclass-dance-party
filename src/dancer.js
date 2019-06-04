@@ -9,11 +9,10 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.setPosition(top, left);
 
   $('.dancer').on('mouseover', function(event) {
-    if ($(this).css('border-width') === 0) {
-      console.log(this);
+    if ($(this).css('border-width') !== '10px') {
       var newProps = {
-        'height': (formatPixels($(this.partner.$node).css('height')) * 2) + 'px',
-        'width': (formatPixels($(this.partner.$node).css('width')) * 2) + 'px'      
+        'height': (formatPixels($(this).css('height')) * 2) + 'px',
+        'width': (formatPixels($(this).css('width')) * 2) + 'px'      
       };
     } else {
       var newProps = {
@@ -25,10 +24,17 @@ var Dancer = function(top, left, timeBetweenSteps) {
   });
 
   $('.dancer').on('mouseout', function(event) {
-    var newProps = {
-      'border-width': '10px',
-      'border-radius': '10px'
-    };
+    if ($(this).css('border-width') !== '20px') {
+      var newProps = {
+        'height': (formatPixels($(this).css('height')) * .5) + 'px',
+        'width': (formatPixels($(this).css('width')) * .5) + 'px'      
+      };
+    } else {
+      var newProps = {
+        'border-width': '10px',
+        'border-radius': '10px'
+      };
+    }
     $(this).css(newProps);
   });  
 
