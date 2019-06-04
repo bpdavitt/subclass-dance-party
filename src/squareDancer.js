@@ -2,8 +2,7 @@ var SquareDancer = function(top, left, timeBetweenSteps) {
   this.partner = this.choosePartner(window.dancers);
   this.partnerTop = formatPixels($(this.partner.$node).css('top'));
   this.partnerLeft = formatPixels($(this.partner.$node).css('left'));
-  //this.top = this.partnerTop - 30;
-  //this.left = this.partnerLeft; 
+
   this.top = {
     top: this.partnerTop - 110,
     left: this.partnerLeft - 40
@@ -32,7 +31,6 @@ SquareDancer.prototype.constructor = SquareDancer;
 
 SquareDancer.prototype.step = function(timeBetweenSteps) {
   Dancer.prototype.step.call(this, timeBetweenSteps);
-
   
   if (this.currentPosition === this.top) {
     this.currentPosition = this.right;    
@@ -44,28 +42,33 @@ SquareDancer.prototype.step = function(timeBetweenSteps) {
     this.currentPosition = this.top;    
   }
 
-  // if (this.top < this.partnerTop) {
-  //   position.top = this.partnerTop;
-  //   position.left = this.partnerLeft + 30;
-  // } else if (this.left > this.partnerLeft) {
-  //   position.left = this.partnerLeft;
-  //   position.top = this.partnerTop + 30;
-  // } else if (this.top > this.partnerTop) {
-  //   position.top = this.partnerTop;
-  //   position.left = this.partnerLeft - 30;
-  // } else if (this.left < this.partnerLeft) {
-  //   position.left = this.partnerLeft;
-  //   position.top = this.partnerTop - 30;
-  // }
-  
-  // this.top = position.top;
-  // this.left = position.left;
   this.setPosition(this.currentPosition.top, this.currentPosition.left);
-  //begin any direction
-  //compare the dancer and the partner's top/left
-  //kick you on around whenever you are exceeding your partner's top, left, !top, !left
+
 };
 
+SquareDancer.prototype.lineUp = function() {
+  var bodyHeight = $('body').height() * .5;
+  var bodyWidth = $('body').width() * .5; 
+
+  this.top = {
+    top: bodyHeight - 110,
+    left: bodyWidth - 40
+  };
+  this.right = {
+    top: bodyHeight - 40,
+    left: bodyWidth + 30
+  };
+  this.bottom = {
+    top: bodyHeight + 30,
+    left: bodyWidth - 40
+  };
+  this.left = {
+    top: bodyHeight - 40,
+    left: bodyWidth - 110
+  };
+  this.currentPosition = this.top;
+  this.setPosition(this.currentPosition.top, this.currentPosition.left);
+};
 
 SquareDancer.prototype.choosePartner = function(array) {
   return array[Math.floor(Math.random() * array.length)];

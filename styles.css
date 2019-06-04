@@ -1,8 +1,9 @@
 body, html{
   height:100%;
   background-image: url('images/discoball.gif');
-  background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+  
 }
 body{
   margin: 0px;
@@ -34,4 +35,21 @@ body, a:link, a:visited, a:active{
   height: 100px;
   width: 100px;
   border: 0 none;
+  border-radius: 100px;
+}
+
+.moonwalker{
+  position: absolute;
+  animation: slide 15s forwards;
+  background-image: url('images/MJGrab.gif');
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  border: 0 none;
+  /*animation-delay: 2s;*/
+}
+
+@keyframes slide {
+    100% { left: 1500px; }
+}
 }
